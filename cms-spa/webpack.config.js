@@ -26,6 +26,10 @@ module.exports = {
                 loader: 'ngtemplate?relativeTo=' + __dirname +'/app!html?root=' + __dirname + '/app'
             },
             {
+                test: /\.css$/,
+                loader: "style!css"
+            },
+            {
                 test: /\.scss$/,
                 loaders: ['style', 'css?root=' + __dirname + '/app', 'autoprefixer-loader?browsers=last 2 versions', 'sass'],
             },
