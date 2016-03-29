@@ -32,6 +32,14 @@ gulp.task("webpack-dev-server", function(callback) {
 
 	new WebpackDevServer(webpack(myConfig), {
 		contentBase: 'app/',
+        proxy: {
+            "/api/*" : {
+                target: "http://localhost:3000", // <- backend
+                rewrite: function(req) {
+                    req.url = req.url.replace(/^\/api/, '');
+                }
+            }
+        },
 		stats: {
 			colors: true
 		}

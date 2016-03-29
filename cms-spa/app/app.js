@@ -4,11 +4,10 @@ import 'angular-resource';
 import 'angular-ui-router';
 import 'angular-sanitize';
 
-import 'services/services';
-import 'directives/directives';
+import 'todos/todos.module';
 
 import mainRoutes from 'components/main/main.routes';
 
-angular.module('test', ['ngResource', 'ui.router', 'services', 'directives', 'ngSanitize'])
+angular.module('cms', ['ngResource', 'ui.router', 'ngSanitize', 'cms.todos'])
 
 .config(mainRoutes);
