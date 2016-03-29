@@ -8,6 +8,9 @@ import 'todos/todos.module';
 
 import mainRoutes from 'components/main/main.routes';
 
-angular.module('cms', ['ngResource', 'ui.router', 'ngSanitize', 'cms.todos'])
-
-.config(mainRoutes);
+angular
+    .module('cms', ['ngResource', 'ui.router', 'ngSanitize', 'cms.todos'])
+    .config(mainRoutes)
+    .run(function($rootScope) {
+        $rootScope.$on('$stateChangeError', console.log.bind(console));
+    });
