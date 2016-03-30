@@ -1,0 +1,4 @@
+<h1>All Todos</h1>
+<ul ng-repeat="todo in $ctrl.todos">
+    <li><a ui-sref="todo({ todoId: todo.id })">{{todo.name}}</a></li>
+</ul>

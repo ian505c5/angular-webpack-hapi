@@ -11,11 +11,11 @@ import 'angular-sanitize';
 
 import 'todos/todos.module';
 
-import mainRoutes from 'components/main/main.routes';
+import coreRoutes from 'core/core.routes';
 
 angular
     .module('cms', ['ngResource', 'ui.router', 'ngSanitize', 'cms.todos', angularMaterial])
-    .config(mainRoutes)
+    .config(coreRoutes)
     .run(function($rootScope) {
         $rootScope.$on('$stateChangeError', console.log.bind(console));
     });
